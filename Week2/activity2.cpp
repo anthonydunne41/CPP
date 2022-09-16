@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /* function to read number from standard input (keyboard) */ 
-int getNumber(); 
+void getNumber(int *); 
 
 /* function to calculate the sum of two numbers */ 
-int calculateSum (int, int); 
+void calculateSum (int, int, int *); 
 
 /* function to display details to the screen */
 void displayDetails (void);
@@ -20,31 +20,29 @@ int main ()
 
     /* prompt for and read first number */
     printf("Please enter first number : ");
-    num1 = getNumber();
+    getNumber(&num1);
 
     /* prompt for and read second number */
     printf("Please enter second number: ");
-    num2 = getNumber();
+    getNumber(&num2);
 
     /* add two numbers together and displayto screen */
-    sum = calculateSum(num1, num2);
+    calculateSum(num1, num2, &sum);
     printf("\nSum of %d and %d is: %d\n\n",num1, num2, sum);
     
     return 0;
 };
 
 /* function to read number from standard input (keyboard) */
-int getNumber()
+void getNumber(int *num)
 {
-    int num;
-    scanf("%d", &num);
-    return num;
+    scanf("%d", num);
 }
 
 /* function to calculate the sum of two numbers */
-int calculateSum (int number1, int number2)
+void calculateSum (int number1, int number2, int *num)
 {
-    return number1 + number2;
+    *num = number1 + number2;
 }
 
 /* function to display details to the screen */
