@@ -17,8 +17,12 @@ private:
 
 
 public:
+	Profile(std::string newName, int newAge, std::string newCity, std::string newCountry);
 	Profile(std::string newName, int newAge, std::string newCity, std::string newCountry, std::string newPronouns);
 
+	std::string view_profile();
+	void add_hobby(std::string new_hobby);
 
 
-}
+
+};
