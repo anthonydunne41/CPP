@@ -54,7 +54,11 @@ int main()
 		std::cin >> ass_string;
 		value_map[a] = ass_string;
 	}
-	
+
+	for (std::map<int, std::string>::iterator it = value_map.begin(); it != value_map.end(); ++it) {
+		std::cout << it->first << " = " << it->second << '\n';
+	}
+
 
 
 
